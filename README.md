@@ -1,6 +1,7 @@
 # gateway_notion_api
 
 gateway 출석 api
+하루에 한번만 가능!
 
 ## Install
 
