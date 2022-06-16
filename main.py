@@ -8,8 +8,8 @@ import sys
 
 if __name__ == "__main__":
 
-  # argument = sys.argv
-  user = "kilee"
+  argument = sys.argv
+  user = argument[1]
   alreadyCheckIn = False
 
   with Loader("...checking user status", "\033[32m Done! ✅\033[0m"):
