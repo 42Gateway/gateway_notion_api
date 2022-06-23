@@ -27,4 +27,4 @@ jobs:
         shell: bash
         run: |
           pip install python-dotenv
-          python3 main.py
+          python3 main.py ${{ github.actor }}
