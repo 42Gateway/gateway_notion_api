@@ -2,20 +2,20 @@ import os
 import datetime
 import requests
 import json
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
-load_dotenv()
-my_bearer = os.getenv("BEARER")
+# load_dotenv()
+# my_bearer = os.getenv("BEARER")
 
 headers = {
-    "Authorization": f"Bearer {my_bearer}",
+    "Authorization": f"Bearer {os.environ['BEARER']}",
     "Accept": "application/json",
     "Notion-Version": "2022-02-22",
     "Content-Type": "application/json"
 }
 
 def isAlreadyCheckIn(user):
-  url = "https://api.notion.com/v1/databases/" + os.getenv("DATABASE_ID") + "/query"
+  url = "https://api.notion.com/v1/databases/" + os.environ['DATABASE_ID'] + "/query"
   getpayload = {
     "filter": {
         "and": [
@@ -44,7 +44,7 @@ def checkIn(user):
   url = "https://api.notion.com/v1/pages"
   payload = {
     "parent": {
-        "database_id": os.getenv("DATABASE_ID")
+        "database_id": os.environ['DATABASE_ID']
     },
     "properties": {
         "Name": {
