@@ -1,0 +1,15 @@
+name: Gateway Notion API
+
+on: push
+
+jobs:
+  first-job:
+    name: 'build job'
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get name
+        shell: bash
+        run: |
+          echo ${{ github }}
