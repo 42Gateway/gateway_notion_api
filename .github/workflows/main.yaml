@@ -4,11 +4,23 @@ on: push
 
 jobs:
   first-job:
-    name: 'build job'
+    name: 'request notion API with github issue'
 
     runs-on: ubuntu-latest
 
     steps:
+      - name: Make envfile
+        uses: SpicyPizza/create-envfile@v1.3
+        with:
+          envkey_DATABASE_ID: ${{ secrets.DATABASE_ID }}
+          envkey_BEARER: ${{ secrets.BEARER }}
+          file_name: .env
+
       - name: Get name
         shell: bash
         run: echo ${{ github.actor }}
+
+      - name: Start Process
+        shell: bash
+        run: |
+          python3 main.py
