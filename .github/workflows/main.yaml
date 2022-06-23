@@ -26,4 +26,5 @@ jobs:
       - name: Start Process
         shell: bash
         run: |
+          pip install python-dotenv
           python3 main.py
