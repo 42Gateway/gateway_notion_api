@@ -16,6 +16,7 @@ jobs:
           echo ${{ secrets.DATABASE_ID }}
           echo "DATABASE_ID=${{ secrets.DATABASE_ID }}" >> .env
           echo "BEARER=${{ secrets.BEARER }}" >> .env
+          cat .env
 
       - name: Get name
         shell: bash
