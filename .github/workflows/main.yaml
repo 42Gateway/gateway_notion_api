@@ -7,6 +7,9 @@ jobs:
     name: 'request notion API with github issue'
 
     runs-on: ubuntu-latest
+    env:
+      DATABASE_ID: ${{ secrets.DATABASE_ID }}
+      BEARER: ${{ secrets.BEARER }}
 
     steps:
       - name: Make envfile
