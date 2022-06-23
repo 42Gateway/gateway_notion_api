@@ -12,6 +12,7 @@ jobs:
       - name: Make envfile
         shell: bash
         run: |
+          echo $PWD
           echo ${{ secrets.DATABASE_ID }}
           echo "DATABASE_ID=${{ secrets.DATABASE_ID }}" >> .env
           echo "BEARER=${{ secrets.BEARER }}" >> .env
