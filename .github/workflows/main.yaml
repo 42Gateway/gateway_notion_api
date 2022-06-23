@@ -12,15 +12,6 @@ jobs:
       BEARER: ${{ secrets.BEARER }}
 
     steps:
-      - name: Make envfile
-        shell: bash
-        run: |
-          echo $PWD
-          echo ${{ secrets.DATABASE_ID }}
-          echo "DATABASE_ID=${{ secrets.DATABASE_ID }}" >> .env
-          echo "BEARER=${{ secrets.BEARER }}" >> .env
-          cat .env
-
       - name: Get name
         shell: bash
         run: echo ${{ github.actor }}
