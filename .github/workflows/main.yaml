@@ -10,11 +10,10 @@ jobs:
 
     steps:
       - name: Make envfile
-        uses: SpicyPizza/create-envfile@v1.3
-        with:
-          envkey_DATABASE_ID: ${{ secrets.DATABASE_ID }}
-          envkey_BEARER: ${{ secrets.BEARER }}
-          file_name: .env
+        shell: bash
+        run: |
+          echo "DATABASE_ID=${{ secrets.DATABASE_ID }}" >> .env
+          echo "BEARER=${{ secrets.BEARER }}" >> .env
 
       - name: Get name
         shell: bash
