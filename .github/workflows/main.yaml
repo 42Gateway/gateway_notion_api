@@ -11,4 +11,4 @@ jobs:
     steps:
       - name: Get name
         shell: bash
-        run: echo "$GITHUB_CONTEXT"
+        run: echo ${{ github.actor }}
