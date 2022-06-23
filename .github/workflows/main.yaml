@@ -11,5 +11,4 @@ jobs:
     steps:
       - name: Get name
         shell: bash
-        run: |
-          echo ${{ github }}
+        run: echo "$GITHUB_CONTEXT"
